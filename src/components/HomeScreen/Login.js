@@ -52,16 +52,16 @@ class LogInForm extends Component {
           <View style = {{flex:1}}/>
           <View style = {{flex:1}}/>
           <Button style = {{alignSelf: 'stretch'}} small transparent info onPress={this.onButtonPressRegister.bind(this)}>
-            <Text uppercase={false} style={{ color:'#585858', alignSelf: 'stretch' }}>Reset Password?</Text>
+            <Text uppercase={false} style={{ fontSize: 12,color:'#585858', alignSelf: 'stretch' }}>Olvidaste la contraseña?</Text>
           </Button>  
         </View>
 
         <View style = {{flex: 2}}/>
 
         <View style = {{flex: 1}}>
-          <View style = {{flex: 1, paddingLeft : 16, paddingRight: 16}}>
-            <Button block rounded onPress={this.onButtonPressLogIn.bind(this)}>
-              <Text>LogIn</Text>
+          <View style = {{flex: 1, paddingLeft : 16, paddingRight: 16, justifyContent: 'center', alignSelf: 'center'}}>
+            <Button block onPress={this.onButtonPressLogIn.bind(this)} style = {{width: 152, height:36, borderRadius:9 }}>
+              <Text style={{fontSize:14}}>LogIn</Text>
             </Button>
           </View>
         </View>
@@ -99,6 +99,7 @@ class LogInForm extends Component {
           <Form style={{flex:3, paddingLeft: 16, paddingRight:32}}>
             <Item>
               <Input 
+                style={{fontSize:20}}
                 placeholder="Correo Electronico"
                 label="Email"
                 onChangeText ={this.onEmailChange.bind(this)}
@@ -107,9 +108,10 @@ class LogInForm extends Component {
             </Item>
             <Item>
               <Input 
+                style={{fontSize:20}}
                 secureTextEntry
-                placeholder="Password"
-                label="Password"
+                placeholder="Contraseña"
+                label="Contraseña"
                 onChangeText ={this.onPasswordChange.bind(this)}
                 value = {this.props.passwordLogIn}
               />
