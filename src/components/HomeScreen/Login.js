@@ -133,6 +133,7 @@ class LogInForm extends Component {
 
 
           </Form>      
+          <View style={{flex:0.5}}/>
           <View style={{flex:2.5 }}>
             {this.renderSpinnerButton()}
           </View>
