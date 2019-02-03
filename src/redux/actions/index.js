@@ -5,6 +5,7 @@ export * from './LoadUserAction';
 export * from './TraerInfoQRActions';
 export * from './mapaActions';
 export * from './restaurantesActions';
+export * from './olvidoActions';
 
 
 

@@ -5,7 +5,9 @@ import ExitReducer from './ExitReducer';
 import QRReducer from './TraerInfoQRReducer';
 import userInfo from './LoadUserReducer';
 import mapaInfo from './MapaReducer';
-import restaurantesInfo from './RestaurantesReducer'
+import restaurantesInfo from './RestaurantesReducer';
+import olvidoReducer from './olvidoReducer';
+
 
 export default combineReducers({
   login: LoginReducer,
@@ -14,7 +16,8 @@ export default combineReducers({
   infoQR: QRReducer,
   user: userInfo,
   mapa: mapaInfo,
-  restaurantesInfo: restaurantesInfo
+  restaurantesInfo: restaurantesInfo,
+  olvido: olvidoReducer
 
 
 });

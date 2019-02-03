@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {emailLogInChanged, passwordLogInChanged, logInUser} from '../../redux/actions/index';
+import {emailLogInChanged, passwordLogInChanged, logInUser, resetOlvido} from '../../redux/actions/index';
 import { withNavigation } from 'react-navigation';
 
 import { ImageBackground, StatusBar } from 'react-native';
@@ -22,8 +22,8 @@ class LogInForm extends Component {
   }
 
   onButtonPressOlvido(){
-    const {emailLogIn, passwordLogIn} = this.props;
-    this.props.logInUser({emailLogIn, passwordLogIn});
+    this.props.resetOlvido();
+    this.props.navigation.navigate('RecoverPassword')
   }
 
   onButtonPressLogIn(){
@@ -172,5 +172,5 @@ const mapStateToProps = state => {
 };
 
 export default 
-  connect(mapStateToProps, {emailLogInChanged, passwordLogInChanged, logInUser})
+  connect(mapStateToProps, {emailLogInChanged, passwordLogInChanged, logInUser, resetOlvido})
   (withNavigation(LogInForm))

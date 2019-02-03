@@ -36,3 +36,10 @@ export const LOADING_LOCATION = 'loading_map';
 export const TRAE_INFOREST = 'traer_inforest'
 export const LOADING_MAP2 = 'loading_map2';
 export const TOTAL_CARGADO = 'total_cargado';
+
+
+export const EMAIL_OLVIDO_CHANGED = 'email_olvido_changed'
+export const OLVIDO_USER_SUCCESS = 'olvido_user_success';
+export const OLVIDO_USER_FAIL = 'olvido_user_fail';
+export const LOADING_OLVIDO = 'loading_olvido';
+export const RESET_OLVIDO = 'reset_olvido';

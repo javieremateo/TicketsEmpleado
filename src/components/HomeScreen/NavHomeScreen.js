@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 import Login from './Login';
+import Contrasenna from './Contrasenna';
+
 import { Root } from "native-base";
 
 
@@ -21,7 +23,7 @@ class HomeRegistro extends Component {
 class HomeRecoverPassword extends Component {
   static navigationOptions = {header: null}
   render() {
-    return ( <RecoverPassword/> );  
+    return ( <Contrasenna/> );  
   }
 }
 
