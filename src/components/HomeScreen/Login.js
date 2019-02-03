@@ -21,6 +21,11 @@ class LogInForm extends Component {
     this.props.passwordLogInChanged(text)
   }
 
+  onButtonPressOlvido(){
+    const {emailLogIn, passwordLogIn} = this.props;
+    this.props.logInUser({emailLogIn, passwordLogIn});
+  }
+
   onButtonPressLogIn(){
     const {emailLogIn, passwordLogIn} = this.props;
     this.props.logInUser({emailLogIn, passwordLogIn});
@@ -48,23 +53,25 @@ class LogInForm extends Component {
     else {     
       return(
       <View style = {{flex: 1, paddingLeft: 16, paddingRight:16 }} >
-        <View style = {{flex:1, flexDirection: 'row',}}>
-          <View style = {{flex:1}}/>
-          <View style = {{flex:1}}/>
-          <Button style = {{alignSelf: 'stretch'}} small transparent info onPress={this.onButtonPressRegister.bind(this)}>
-            <Text uppercase={false} style={{ fontSize: 12,color:'#585858', alignSelf: 'stretch' }}>Olvidaste la contraseña?</Text>
-          </Button>  
-        </View>
+         
+            <View style = {{flex: 1, justifyContent: 'center', alignSelf: 'center'}}>
+              <Button block onPress={this.onButtonPressLogIn.bind(this)} style = {{width: 200, borderRadius:9 }}>
+                <Text style={{fontSize:14}}>LogIn</Text>
+              </Button>
+            </View>
 
-        <View style = {{flex: 2}}/>
 
-        <View style = {{flex: 1}}>
-          <View style = {{flex: 1, paddingLeft : 16, paddingRight: 16, justifyContent: 'center', alignSelf: 'center'}}>
-            <Button block onPress={this.onButtonPressLogIn.bind(this)} style = {{width: 152, height:36, borderRadius:9 }}>
-              <Text style={{fontSize:14}}>LogIn</Text>
-            </Button>
-          </View>
-        </View>
+            <View style = {{flex: 4, justifyContent: 'center', alignSelf: 'center' }} >
+              <Text > ──────────  O  ──────────</Text>
+            </View>
+
+            <View style = {{flex: 1, justifyContent: 'center', alignSelf: 'center'}}>
+              <Button block onPress={this.onButtonPressLogIn.bind(this)} style = {{width: 200, borderRadius:9 }}>
+                <Text style={{fontSize:14}}>Registrarse</Text>
+              </Button>
+            </View>
+
+       
       </View>  
       )  
       }
@@ -86,12 +93,12 @@ class LogInForm extends Component {
         <View style={{flex:1,
             justifyContent: 'center', marginTop: (StatusBar.currentHeight) }}>
           <View style={{flex:0.5}}/>
-          <View style={{flex:2.5, 
+          <View style={{flex:3, 
             justifyContent: 'center', alignItems: 'center',
             }}>
             <FlexImage
               source={require('../../../assets/Logo2.png')}
-              style={{flex: 1}}
+              style={{flex: 3}}
               
             /> 
           </View>
@@ -116,8 +123,17 @@ class LogInForm extends Component {
                 value = {this.props.passwordLogIn}
               />
             </Item >
+            <View style = {{flex:0.1}}/>
+            <View style = {{flex:1, flexDirection: 'row',}}>
+              <View style = {{flex:1.5}}/>
+              <Button style = {{alignSelf: 'stretch'}} small transparent info onPress={this.onButtonPressOlvido.bind(this)}>
+                <Text uppercase={false} style={{ fontSize: 12,color:'#585858', alignSelf: 'stretch' }}>Olvidaste la contraseña?</Text>
+              </Button>  
+            </View>
+
+
           </Form>      
-          <View style={{flex:1, marginTop: -120}}>
+          <View style={{flex:2.5 }}>
             {this.renderSpinnerButton()}
           </View>
           <View style={{flex:2, justifyContent: 'center', alignItems: 'center'}}>
@@ -137,6 +153,12 @@ class LogInForm extends Component {
     )
   }
   
+}
+
+
+const flexStyle={
+  borderBottomColor: 'black',
+  borderBottomWidth: 1, borderTopColor: 'black', borderTopWidth: 1
 }
 
 const mapStateToProps = state => {
