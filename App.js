@@ -7,6 +7,7 @@ import reducers from './src/redux/reducers';
 
 import FirebaseLaunch from './src/components/LoadingApp/FirebaseLaunch';
 
+testgit
 
 class App extends React.Component {
   
