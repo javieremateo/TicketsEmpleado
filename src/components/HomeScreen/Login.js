@@ -62,11 +62,11 @@ class LogInForm extends Component {
 
 
             <View style = {{flex: 4, justifyContent: 'center', alignSelf: 'center' }} >
-              <Text > ──────────  O  ──────────</Text>
+              <Text style={{color: '#194D33'}} > ────────────  O  ────────────</Text>
             </View>
 
             <View style = {{flex: 1, justifyContent: 'center', alignSelf: 'center'}}>
-              <Button block onPress={this.onButtonPressLogIn.bind(this)} style = {{width: 200, borderRadius:9 }}>
+              <Button block onPress={this.onButtonPressLogIn.bind(this)} style = {{color: '#009688', width: 200, borderRadius:9 }}>
                 <Text style={{fontSize:14}}>Registrarse</Text>
               </Button>
             </View>
